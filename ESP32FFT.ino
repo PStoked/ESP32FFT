@@ -16,9 +16,7 @@
 #define COLOR_ORDER GRB
 CRGB leds[NUM_LEDS];
 
-// ============================================================
-// INMP441 I2S SETTINGS
-// ============================================================
+//Microphone Settings
 #define I2S_BCLK    26
 #define I2S_LRCLK   25
 #define I2S_DIN     33
@@ -157,7 +155,7 @@ void loop() {
 
   const float alpha = hpfAlpha(HPF_CUTOFF_HZ);
 
-  // ---- capture ----
+  // capture
   // We still remove DC by mean subtraction, but HPF helps kill rumble/handling noise.
   double mean = 0.0;
 
@@ -177,7 +175,7 @@ void loop() {
     mean += vReal[i];
   }
 
-  // ---- DC removal
+  // DC removal
   mean *= (1.0 / (double)FFT_SIZE);
   for (int i = 0; i < FFT_SIZE; i++) vReal[i] -= mean;
 
@@ -186,7 +184,6 @@ void loop() {
   FFT.compute(FFT_FORWARD);
   FFT.complexToMagnitude();
 
-  // ---- band power + frame max ----
   float ledP[NUM_LEDS];
   float maxP = 1e-9f;
 
@@ -210,7 +207,7 @@ void loop() {
   // ---- noise gate decision (frame-level) ----
   const bool signalPresent = (maxP > (GATE_POWER * SIGNAL_MARGIN));
 
-  // ---- render (NO normalization, fixed gain mapping) ----
+  // ---- render (no normalization, fixed gain mapping) ----
   for (int led = 0; led < NUM_LEDS; led++) {
 
     float gated = ledP[led] - GATE_POWER;
