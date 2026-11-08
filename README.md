@@ -1,4 +1,7 @@
 # ESP32FFT
-Code to flash to an ESP32 following the tutorial in the README.
+Code to flash to an ESP32 following our tutorial here: for a realtime fourier transform device.
 
-Download Arduino IDE and LEDFourier2.ino. Flash the code to the ESP32 following this tutorial: https://medium.com/@pauljoegeorge/setup-arduino-ide-to-flash-a-project-to-esp32-34db014a7e65
+1. Download Arduino IDE: https://www.arduino.cc/en/software/#ide
+2. Download ESP32FFT.ino
+3. Flash the code to the board following our instructions in the video.
+4. Enjoy!
