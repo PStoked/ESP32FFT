@@ -57,12 +57,6 @@ float smoothed[NUM_LEDS];
 static constexpr float GATE_POWER    = 10000.0f; // raise for more "blank in silence"
 static constexpr float SIGNAL_MARGIN = 1.5f;     // frame must exceed gate*margin
 
-// Increase FFT_GAIN to make it more sensitive to noise; decrease if saturates too easily.
-// The ideal value for FFT_GAIN will be different depending on your system
-// as well as the environment in which you want to use it
-static constexpr float FFT_GAIN = 1e-13f;
-static constexpr float BRIGHTNESS_GAIN = 1.0f;
-
 // I added a high pass filter so that slow, rumbling frequencies
 // (like an AC unit) can be filtered out before the FFT is calculated
 // Set cutoff frequency here (e.g. 60, 100, 150, 200...)
