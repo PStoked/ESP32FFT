@@ -29,5 +29,6 @@ Flashing the file to an ESP32 following our tutorial here: for a realtime fourie
 2. Download ESP32FFT.ino and create a folder in C:\Users\usr\Documents\Arduino called ESP32FFT and place the file you just downloaded in the folder.
 3. Double click the file within the folder to launch Arduino IDE.
 4. Install the ArduinoFFT and FastLED libraries.
-5. Upload the code to the ESP32 
-6. Enjoy!
+5. Upload the code to the ESP32.
+6. Plug everything in to power.
+7. Enjoy!
